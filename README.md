@@ -3,10 +3,10 @@ A CLI project that tracks leave between the HR and employee.
 
 The Leave Tracker is a Python application that allows employees to request leave and tracks their leave requests. It sends an email notification to the HR department upon each leave request and stores the leave request details in a database.
 
-Getting Started
+<th>Getting Started<th>
 These instructions will guide you on how to set up and use the Leave Tracker application.
 
-Prerequisites
+<th>Prerequisites<th>
 To run this application, you need:
 
 Python installed on your machine.
@@ -36,12 +36,12 @@ Follow the prompts to input the leave request details as requested.
 
 The application will send an email notification to the HR department and store the leave request details in the database.
 
-Authors
+<th>Authors<th>
 Your Name - Charity Wanjiku
 License - MIT License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgments
+,<th>Acknowledgments<th>
 Mary Watiri  and George-Okumu for the great help.
 Browsers.
 
