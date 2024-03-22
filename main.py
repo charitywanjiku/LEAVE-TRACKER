@@ -96,6 +96,41 @@ def view_leave_requests():
         if connection:
             connection.close()
 
+def grant_leave(request_id):
+    try:
+        connection = sqlite3.connect('leave_tracker.db')
+        cursor = connection.cursor()
+
+        # Update status to 'leave successfully granted'
+        cursor.execute('''UPDATE leave_requests 
+                          SET status = 'leave successfully granted'
+                          WHERE request_id = ?''', (request_id,))
+
+        connection.commit()
+        print("Leave successfully granted.")
+    except sqlite3.Error as error:
+        print(f"Failed to grant leave: {error}")
+    finally:
+        if connection:
+            connection.close()
+
+def delete_leave_request(request_id):
+    try:
+        connection = sqlite3.connect('leave_tracker.db')
+        cursor = connection.cursor()
+
+        # Delete leave request
+        cursor.execute('''DELETE FROM leave_requests 
+                          WHERE request_id = ?''', (request_id,))
+
+        connection.commit()
+        print("Leave request deleted successfully.")
+    except sqlite3.Error as error:
+        print(f"Failed to delete leave request: {error}")
+    finally:
+        if connection:
+            connection.close()
+
 def main():
     create_tables()
 
